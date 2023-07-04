@@ -10,10 +10,7 @@ from tkinter.simpledialog import askinteger
 from PIL import Image
 import pickle
 import zlib
-# def udp_send_connection_ack(sock,destIp,destPort):
-#     msg = input(f"Enter Message to  {destIp}:{destPort}")
-#     sock.sendto(msg.encode('utf-8'), (destIp, destPort))
-#     print(f"Sent to receiver: {msg}")
+
 def tcp_connection_listen(tcp_listen_port):
     sock = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
     sock.bind(("127.0.0.1",tcp_listen_port))
@@ -289,16 +286,3 @@ def graphic():
 
 
 graphic()
-# try:
-#     image = Image.open('./files/' + "fox.jpg")
-#     image_rgp = image.convert("RGB")
-#     image_array = np.array(image_rgp)
-#     height,width,channels = image_array.shape
-#     for i in range(height):
-#         image_temp = []
-#         for j in range(width):
-#             image_temp.append((image_array[i][j][0],image_array[i][j][1],image_array[i][j][2]))
-#         print(image_temp)
-#         print("------------------")
-# except FileNotFoundError:
-#     print("Invalid image file path!")
